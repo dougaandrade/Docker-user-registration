@@ -1,19 +1,30 @@
 # Projeto: Castrastro de Usuários (user-registration) - NodeJS/Express
 
-### 1 - O que é?
+### O que é? 📒
 
 Página web para cadastro de usuários desenvolvido em NodeJS/Express .
 
-### 2 - Objetivo
+### Objetivo 📋
 
 1. O principal objetivo desse projeto é sua utilização em containers.
 2. Criação de Dockerfiles configurando cada ambiente especifico.
 3. Aprendizado do funcionamento do Docker.
 
-### 3 - Execução
+### Execução ⚙️
 
 Para cumprir o objetivo e executar esse projeto:
 1. Crie uma network personalizada utilizando o driver Bridge.
 2. Configure um container do MongoDB na porta 27017 e insira-o na rede personalizada criada no passo anterior.
 3. Crie um Dockerfile para a aplicação em NodeJS expondo a porta 3000 e uma variável MONGODB contendo o nome do container do MongoDB para que haja comunicação. Em seguida inicialize um container para a aplicação na network criada no passo 1.
 4. Para visualizar os dados inseridos no banco, pode ser utilizado um container do Mongo Express.
+
+### Comandos 💻
+
+- Build do Mongodb`❯ docker build -t mongodb -f mongodb.dockerfile .`
+- Run do Mongodb com a Porta e Volume `❯ docker run -dit -p 27017:27017 --mount source=mongo-volume,target=/data/db --name mongodb mongodb`
+  
+- Build do Mongo-express com Argumento do IP `❯ docker build -t express-mongodb -f mongo-express.dockerfile --build-arg MONGO=$MONGOIP .`
+- Após o build do Mongo-express dê um inspect no mongdb e depois exporte o ip passado `export MONGOIP=172.17.0.2`
+- Build do App.dockerfile com Argumento do IP `❯ docker build -t nodejs-app -f app.dockerfile --build-arg MONGO=$MONGOIP .`
+- Run o Mongo-express `❯ docker run -dit -p 8081:8081 express-mongodb`
+- Run o App `❯ docker run -dit -p 3000:3000 nodejs-app`
