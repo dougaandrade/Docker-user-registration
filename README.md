@@ -20,11 +20,18 @@ Para cumprir o objetivo e executar esse projeto:
 
 ### Comandos 💻
 
-- Build do Mongodb`❯ docker build -t mongodb -f mongodb.dockerfile .`
-- Run do Mongodb com a Porta e Volume `❯ docker run -dit -p 27017:27017 --mount source=mongo-volume,target=/data/db --name mongodb mongodb`
+- Build do Mongodb
+  ```bash ❯ docker build -t mongodb -f mongodb.dockerfile .```
+- Run do Mongodb com a Porta e Volume
+  ```bash docker run -dit -p 27017:27017 --mount source=mongo-volume,target=/data/db --name mongodb mongodb```
   
-- Build do Mongo-express com Argumento do IP `❯ docker build -t express-mongodb -f mongo-express.dockerfile --build-arg MONGO=$MONGOIP .`
-- Após o build do Mongo-express dê um inspect no mongdb e depois exporte o ip passado `export MONGOIP=172.17.0.2`
-- Build do App.dockerfile com Argumento do IP `❯ docker build -t nodejs-app -f app.dockerfile --build-arg MONGO=$MONGOIP .`
-- Run o Mongo-express `❯ docker run -dit -p 8081:8081 express-mongodb`
-- Run o App `❯ docker run -dit -p 3000:3000 nodejs-app`
+- Build do Mongo-express com Argumento do IP
+  ```bash ❯ docker build -t express-mongodb -f mongo-express.dockerfile --build-arg MONGO=$MONGOIP .```
+- Após o build do Mongo-express dê um inspect no mongdb e depois exporte o ip passado
+  ```bash export MONGOIP=172.17.0.2 ```
+- Build do App.dockerfile com Argumento do IP
+  ```bash ❯ docker build -t nodejs-app -f app.dockerfile --build-arg MONGO=$MONGOIP .```
+- Run o Mongo-express
+  ```bash ❯ docker run -dit -p 8081:8081 express-mongodb```
+- Run o App
+  ```bash docker run -dit -p 3000:3000 nodejs-app```
