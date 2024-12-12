@@ -1,63 +1,130 @@
-input[type=text], input[type=number], input[type=email], select {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
+input[type="text"],
+input[type="number"],
+input[type="email"],
+select {
+  width: 100%;
+  padding: 8px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
-input[type=submit] {
-    width: 100%;
-    background-color: #0e50bb;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+label {
+  color: #ffffff;
 }
-  
-input[type=submit]:hover {
-    background-color: #0a367c;
+
+.container {
+  width: 40%;
+  margin: 0 auto;
+}
+
+.card {
+  width: 350px;
+  height: 600px;
+  margin: 0 auto;
+  background-color: #202020;
+  border-radius: 8px;
+  z-index: 1;
+}
+
+input[type="submit"] {
+  width: 100%;
+  background-color: #0e50bb;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #0a367c;
 }
 
 .closebtn {
-    margin-left: 15px;
-    color: white;
-    font-weight: bold;
-    float: right;
-    font-size: 22px;
-    line-height: 20px;
-    cursor: pointer;
-    transition: 0.3s;
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 .error {
-    padding: 20px;
-    background-color: #f44336;
-    color: white;
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
 }
 
 .success {
-    padding: 20px;
-    background-color: #2cc731;
-    color: white;
+  padding: 20px;
+  background-color: #2cc731;
+  color: white;
 }
 
 div {
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px;
+  border-radius: 50px;
+  padding: 20px;
 }
 
 h1 {
-    color:#454545;
+  color: #ffffff;
+  font-size: 25px;
+  padding: 10px;
+  text-align: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  font-family: "Roboto", sans-serif;
+  background-color: rgb(232 232 232 / 1);
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+.tools {
+  display: flex;
+  align-items: center;
+  padding: 9px;
+}
+
+.circle {
+  padding: 0 4px;
+}
+
+.box {
+  display: inline-block;
+  align-items: center;
+  width: 15px;
+  height: 15px;
+  padding: 1px;
+  border-radius: 50%;
+}
+
+.red {
+  background-color: #ff605c;
+}
+
+.yellow {
+  background-color: #ffbd44;
+}
+
+.green {
+  background-color: #00ca4e;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
