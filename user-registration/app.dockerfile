@@ -1,7 +1,6 @@
 FROM node:20.3.0-alpine3.18
 WORKDIR /app
-ARG MONGO=$MONGOIP
-ENV mongodb=$MONGO
+ENV mongodb=mymongodb
 EXPOSE 3000
 COPY package-lock.json .
 COPY package.json .
