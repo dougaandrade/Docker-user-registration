@@ -23,34 +23,34 @@ Para cumprir o objetivo e executar esse projeto:
 - Build do Mongodb
   
   ```bash
-   ❯ docker build -t mongodb -f mongodb.dockerfile .```
-  
-- Run do Mongodb com a Porta e Volume
-  
-  ```bash
-   docker run -dit -p 27017:27017 --mount source=mongo-volume,target=/data/db --name mongodb mongodb```
-  
-- Build do Mongo-express com Argumento do IP
+   ❯ docker build -t <nome da imagem:<versão>> -f mongodb.dockerfile .
+
+- Build do Mongo-Express
   
   ```bash
-   ❯ docker build -t express-mongodb -f mongo-express.dockerfile --build-arg MONGO=$MONGOIP .```
-  
-- Após o build do Mongo-express dê um inspect no mongdb e depois exporte o ip passado
-  
-  ```bash
-  export MONGOIP=172.17.0.2 ```
-  
-- Build do App.dockerfile com Argumento do IP
+  ❯ docker build -t <nome da imagem:<versão>> -f mongo-express.dockerfile . 
+
+- Build da Aplicação (NodeJs)
   
   ```bash
-   ❯ docker build -t nodejs-app -f app.dockerfile --build-arg MONGO=$MONGOIP .```
+   ❯ docker build -t <nome da imagem:<versão>> -f app.dockerfile .
+
+- Build da Rede
+  
+  ```bash
+  ❯ docker network create --driver bridge <nome da rede>
+
+- Run do Container
+  
+  ```bash
+  ❯ docker run -dit --name <nome do do server declarado no express.dockerfile> -p 27017:27017 --network <nome da rede criada> --mount source=<nome do volume>,target=<volume declarado no mongodb> <nome do mongodb criado> 
   
 - Run o Mongo-express
   
   ```bash
-  ❯ docker run -dit -p 8081:8081 express-mongodb```
+  ❯ docker run -dit -p 8081:8081 --network rede_app <nome da imagem>
   
 - Run o App
   
   ```bash
-   ❯ docker run -dit -p 3000:3000 nodejs-app```
+   ❯ docker run -dit -p 3000:3000 nodejs-app
