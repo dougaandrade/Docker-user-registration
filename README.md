@@ -43,7 +43,9 @@ Para cumprir o objetivo e executar esse projeto:
 - Run do Container
   
   ```bash
-  ❯ docker run -dit --name <nome do server declarado no express.dockerfile> -p 27017:27017 --network <nome da rede criada> --mount source=<nome do volume>,target=<volume declarado no mongodb> <nome do mongodb criado> 
+  ❯ docker run -dit --name <nome do server declarado no express.dockerfile>
+   -p 27017:27017 --network <nome da rede criada>
+   --mount source=<nome do volume>,target=<volume declarado no mongodb> <nome do mongodb criado> 
   
 - Run o Mongo-express
   
