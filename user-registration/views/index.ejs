@@ -3,56 +3,61 @@
 
 <head>
   <title>Cadastro de Usuário</title>
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./style.css" />
 </head>
 
 <body>
-  <div class="container">
+  <div class="container-notify">
     <% if (message) { %>
-      <div class="success">
+      <div class="card-notify-success">
+        <div class="success">
+          <%= message %>
+        </div>
         <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-        <%= message %>
       </div>
       <% } else if (error) { %>
-        <div class="error">
+        <div class="card-notify-error">
+          <div class="error">
+            <%= error %>
+          </div>
           <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-          <%= error %>
         </div>
         <% } %>
-          <div class="card">
-            <div class="tools">
-              <div class="circle">
-                <span class="red box"></span>
-              </div>
-              <div class="circle">
-                <span class="yellow box"></span>
-              </div>
-              <div class="circle">
-                <span class="green box"></span>
-              </div>
-            </div>
-            <div class="card-content">
-              <h1>Cadastro de Usuário</h1>
-              <div>
-                <form action="/users" method="POST">
-                  <label for="nome">Nome:</label>
-                  <input type="text" name="nome" id="nome" required>
-                  <label for="idade">Idade:</label>
-                  <input type="number" name="idade" id="idade" required>
-                  <label for="sexo">Sexo:</label>
-                  <select id="sexo" name="sexo" required>
-                    <option value="M">Masculino</option>
-                    <option value="F">Feminino</option>
-                  </select>
-                  <label for="email">Email:</label>
-                  <input type="email" name="email" id="email" required>
-                  <input type="submit" value="Cadastrar">
-                </form>
-              </div>
-            </div>
-          </div>
+  </div>
+  <div class="container">
+    <div class="card">
+      <div class="tools">
+        <div class="circle">
+          <span class="red box"></span>
+        </div>
+        <div class="circle">
+          <span class="yellow box"></span>
+        </div>
+        <div class="circle">
+          <span class="green box"></span>
+        </div>
+      </div>
+      <div class="card-content">
+        <h1>Cadastro de Usuário</h1>
+        <div>
+          <form action="/users" method="POST">
+            <label for="nome">Nome:</label>
+            <input type="text" name="nome" id="nome" required />
+            <label for="idade">Idade:</label>
+            <input type="number" name="idade" id="idade" required />
+            <label for="sexo">Sexo:</label>
+            <select id="sexo" name="sexo" required>
+              <option value="M">Masculino</option>
+              <option value="F">Feminino</option>
+            </select>
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" required />
+            <input type="submit" value="Cadastrar" />
+          </form>
+        </div>
+      </div>
+    </div>
   </div>
 </body>
-
 
 </html>
