@@ -33,7 +33,7 @@ Para cumprir o objetivo e executar esse projeto:
 - Build da Aplicação (NodeJs)
   
   ```bash
-   ❯ docker build -t <nome da imagem:<versão>> -f app.dockerfile .
+   ❯ docker build -t <nome da aplicação(NodeJs):<versão>> -f app.dockerfile .
 
 - Build da Rede
   
